@@ -7,8 +7,6 @@ from datetime import datetime
 import smtplib
 import os
 from email.message import EmailMessage
-import schedule
-import time
 
 # Headers to mimic a real browser request
 headers = {
@@ -102,12 +100,7 @@ def scrape_and_send_email():
         print("Email sent at:", datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC'))
 
     except Exception as e:
-        pass  # Silently handle exceptions
-scrape_and_send_email()
-# Schedule to run every 2 minutes
-schedule.every(2).minutes.do(scrape_and_send_email)
+        print("Error sending email:", e)
 
-# Keep the script running
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# Run the function immediately when script starts
+scrape_and_send_email()
