@@ -2,7 +2,7 @@ name: Scrape Mihome
 
 on:
   schedule:
-    - cron: "*/2 * * * *"  # Runs every 2 minutes
+    - cron: "0 4 */3 * *"  # Runs every 3 days at 9 AM (UTC+5)
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
