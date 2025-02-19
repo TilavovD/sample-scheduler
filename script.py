@@ -18,7 +18,7 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SENDER_EMAIL = "david.stylemix@gmail.com"
 SENDER_PASSWORD = "snrn laxn fwcz pntr"  # Use an App Password if using Gmail
-RECEIVER_EMAIL = "jrahmonov1906@gmail.com"
+RECEIVER_EMAIL = "zikrulloturgun@gmail.com"
 
 def scrape_and_send_email():
     # Generate filenames with timestamp
