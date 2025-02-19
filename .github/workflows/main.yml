@@ -1,0 +1,24 @@
+name: Scrape Mihome
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"  # Runs every 2 minutes
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest  # Runs on a free Ubuntu VM
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4 pandas
+
+      - name: Run Scraper
+        run: python script.py
