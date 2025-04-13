@@ -63,9 +63,15 @@ def scrape_and_send_email():
                     if post_id and first_link:
                         writer.writerow([post_id, first_link, product_name, price])
             else:
-                break
+                if i < 28:
+                    print(i)
+                    i += 1
+                else:
+                    print(i)
+                    break
 
             i += 1
+            
 
     # Convert CSV to XLSX
     csv_data = pd.read_csv(csv_filename)
